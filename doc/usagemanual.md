@@ -1,0 +1,80 @@
+### Usage Manual (v0.92) {#Usage Manual (v0.92)}
+
+A typical example on profiling with yappi, includes at least 3 lines of code:
+
+```python
+import yappi
+def a(): 
+    for i in range(10000000): pass
+
+yappi.start()
+a()
+yappi.get_func_stats().print_all()
+yappi.get_thread_stats().print_all()
+```
+
+And the output of running above script:
+
+```bash
+Clock type: cpu
+Ordered by: totaltime, desc
+
+name                                    #n         tsub      ttot      tavg
+deneme.py:35 a                          1          0.296402  0.296402  0.296402
+
+name           tid              ttot      scnt
+_MainThread    6016             0.296402  1
+```
+
+Let's inspect the results in detail. So, first line:
+
+```bash
+Clock type: cpu
+```
+
+This indicates the profiling timing stats shown are retrieved using the CPU clock. That means the actual CPU time spent in the function is shown. Yappi provides two modes of operation: CPU and Wall time profiling. You can change the setting by a call to
+`yappi.set_clock_type()` API.
+
+Second is:
+
+```bash
+Ordered by: totaltime, desc
+```
+
+It is obvious. It shows the sort order and sort key of the shown
+profiling stats. You can see the valid values for this in
+*YFuncStats().sort()* API.
+
+Ok, now we actually see the statistic of the function `a()`:
+
+```bash
+name                                    #n         tsub      ttot      tavg
+deneme.py:35 a                          1          0.296402  0.296402  0.296402
+```
+
+Let's explain the fields in detail:
+
+| Title   | Description
+|:--------|:--------------
+| `name`  | the full unique name of the called function. 
+| `n`     | how many times this function is called. 
+| `tsub`  | how many time this function has spent in total, subcalls excluded. See Clock Types
+to interpret this value correctly. 
+| `ttot`  | how many time this function has spent in total, subcalls included. See Clock Types
+to interpret this value correctly. 
+| `tavg`  | how many time this function has spent in average, subcalls included. See Clock Types
+to interpret this value correctly.
+
+The next lines shows the thread stats. So, let see:
+
+```bash
+name           tid              ttot      scnt
+_MainThread    6016             0.296402  1
+```
+
+| Title | Description
+|:------|:------------
+| name  | the class name of the Thread. (This is the name of the class inherits the threading.Thread class) 
+| tid   | the thread id.
+| ttot  | how many time this thread has spent in total.
+| scnt  | how many times this thread is scheduled.
