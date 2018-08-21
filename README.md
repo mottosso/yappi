@@ -2,6 +2,13 @@
 
 <p align=center>A cProfile alternative for long-running multi-threaded applications<br><i>Cloned from <a href=https://bitbucket.org/sumerc/yappi>bitbucket.org/sumerc/yappi</a>, <a href=https://bitbucket.org/sumerc/yappi/commits/bf48b53eb3ce51a21e58b5223f10b19e1c3351c9?at=default>commit</a></i></p>.
 
+**Changes**
+
+No functional changes, just a few to presentation and documentation.
+
+- Moved (hidden) documentation into this README
+- Moved source code into `/src`, for more visibility of README
+
 **Table of contents**
 
 - [Installation](#installation)
