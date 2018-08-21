@@ -1,6 +1,6 @@
 <p align=center><img width=300 src=https://user-images.githubusercontent.com/2152766/44388275-9fe5b200-a51f-11e8-80b0-a9a1c2f7174d.png></p>
 
-<p align=center>A cProfile alternative for long-running multi-threaded application<br><i>Cloned from <a href=https://bitbucket.org/sumerc/yappi>bitbucket.org/sumerc/yappi</a>, <a href=https://bitbucket.org/sumerc/yappi/commits/bf48b53eb3ce51a21e58b5223f10b19e1c3351c9?at=default>commit</a></i></p>.
+<p align=center>A cProfile alternative for long-running multi-threaded applications<br><i>Cloned from <a href=https://bitbucket.org/sumerc/yappi>bitbucket.org/sumerc/yappi</a>, <a href=https://bitbucket.org/sumerc/yappi/commits/bf48b53eb3ce51a21e58b5223f10b19e1c3351c9?at=default>commit</a></i></p>.
 
 **Table of contents**
 
